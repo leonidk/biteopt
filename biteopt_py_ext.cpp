@@ -3,22 +3,21 @@
 #include "biteopt.h"
 #include <functional>
 #include <vector>
+#include <string>
 extern "C" {
 
 static PyObject* minimize_func(PyObject* self, PyObject* args, PyObject *kwargs)
 {
     std::vector<double> upper, lower;
-    PyObject *rv = 0;
-
     PyObject * func_py = NULL;
     PyObject * upper_py = NULL;
     PyObject * lower_py = NULL;
-    int iter_py = 10;
+    int iter_py = 1;
     int M_py = 1;
     int attc_py = 10;
-    static char *kwlist[] = {"func", "lower", "upper", "iter", "Mi", "attc", NULL};
+    static const char *kwlist[] = {"func", "lower", "upper", "iter", "Mi", "attc", NULL};
 
-    if (!PyArg_ParseTupleAndKeywords(args, kwargs, "OOO|iii", kwlist, 
+    if (!PyArg_ParseTupleAndKeywords(args, kwargs, "OOO|iii", const_cast<char**>(kwlist), 
                                      &func_py, &lower_py, &upper_py, &iter_py, &M_py, &attc_py)) 
     {
         return NULL;
@@ -104,7 +103,7 @@ static PyObject* minimize_func(PyObject* self, PyObject* args, PyObject *kwargs)
 /*  define functions in module */
 static PyMethodDef BiteOptMethods[] =
 {
-     {"minimize",(PyCFunction) minimize_func,  METH_VARARGS | METH_KEYWORDS, "perform minimization"},
+     {"minimize",(PyCFunction) minimize_func,  METH_VARARGS | METH_KEYWORDS, "func lower_bound (list) upper_bound (list) iter (int) M (int) attc (int)"},
      {NULL, NULL, 0, NULL}
 };
 
