@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 import os
 import sys
+import setuptools
 from distutils.core import setup, Extension
 
 # https://github.com/pypa/packaging-problems/issues/84
@@ -9,7 +10,7 @@ headers = ['biteopt.h','biternd.h']
 def get_c_sources(files, include_headers=False):
     return files + (headers if include_headers else [])
 
-module1 = Extension('biteopt_ext',
+module1 = Extension('biteopt',
                   sources=get_c_sources(['biteopt_py_ext.cpp'], include_headers=(sys.argv[1] == "sdist")),
                   language="c++",
                   extra_compile_args=['-std=c++11'] if os.name != 'nt' else [])

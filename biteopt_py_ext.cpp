@@ -101,7 +101,7 @@ static PyObject* minimize_func(PyObject* self, PyObject* args, PyObject *kwargs)
 }
 
 /*  define functions in module */
-static PyMethodDef BiteOptMethods[] =
+static PyMethodDef biteoptMethods[] =
 {
      {"minimize",(PyCFunction) minimize_func,  METH_VARARGS | METH_KEYWORDS, "func lower_bound (list) upper_bound (list) iter (int) M (int) attc (int)"},
      {NULL, NULL, 0, NULL}
@@ -115,7 +115,7 @@ static struct PyModuleDef cModPyDem =
     PyModuleDef_HEAD_INIT,
     "minimize", "Some minimization",
     -1,
-    BiteOptMethods
+    biteoptMethods
 };
 
 PyMODINIT_FUNC
@@ -131,7 +131,7 @@ PyInit_biteopt(void)
 PyMODINIT_FUNC
 initbiteopt(void)
 {
-    (void) Py_InitModule("biteopt_module", BiteOptMethods);
+    (void) Py_InitModule("biteopt_module", biteoptMethods);
 }
 
 #endif
