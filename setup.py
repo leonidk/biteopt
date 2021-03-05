@@ -16,7 +16,7 @@ module1 = Extension('biteopt',
                   extra_compile_args=['-std=c++11'] if os.name != 'nt' else [])
 
 setup(name='biteopt',
-      version='0.1',
+      version='0.2.0',
       description="Python Wrapper for Aleksey Vaneev's BiteOpt",
       author='leonidk',
       author_email='lkeselman@gmail.com',

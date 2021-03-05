@@ -6,7 +6,7 @@ def spice_jar(x):
     return sin(x1 + x2) + (x1 - x2) ** 2 - 1.5 * x1 + 2.5 * x2 + 1
 
 import biteopt
-res = biteopt.minimize(spice_jar,[-1.5,-3],[4,4],1,1,500)
+res = biteopt.minimize(spice_jar,[-1.5,-3],[4,4],50,1,10)
 res_fx = spice_jar(res)
 print(res_fx)
 print(abs(spice_jar_best-res_fx) < 1e-2)
