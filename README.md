@@ -1,4 +1,4 @@
-# BITEOPT - Derivative-Free Optimization Method #
+# Python wrappers for BITEOPT - Derivative-Free Optimization Method #
 
 ## Contents ##
 * [Installation](#installation)
