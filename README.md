@@ -1,7 +1,7 @@
-# BITEOPT - Derivative-Free Optimization Method #
+# Python wrappers for BITEOPT - Derivative-Free Optimization Method #
 
 ## Contents ##
-
+* [Installation](#installation)
 * [Introduction](#introduction)
 * [Comparison](#comparison)
 * [CBiteOpt (biteopt.h)](#cbiteopt-biteopth)
@@ -17,6 +17,14 @@
 * [Method philosophy](#method-philosophy)
 * [SMA-ES](#sma-es)
 * [SpherOpt](#spheropt)
+
+## Installation ##
+
+Biteopt is pip installable via
+
+``
+pip install biteopt
+``
 
 ## Introduction ##
 
